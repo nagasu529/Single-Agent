@@ -214,7 +214,7 @@ public class FarmerGui extends javax.swing.JFrame {
             cropType st = (cropType)itrR.next();
             System.out.println(st.cropName + " " + st.cropStage +
                     " " + st.droubhtSensitivity + " " + st.dsValue + " " + st.stValue + " " + st.cvValue +
-                    " " + st.literPerSecHec + " " + st.waterReq + " " + st.cropCoefficient + " " + st.waterReduction);
+                    " " + st.literPerSecHec + " " + st.waterReq + " " + st.soilWaterContainValue + " " + st.waterReqWithSoil + " " + st.cropCoefficient + " " + st.waterReduction);
         }
         System.out.println("Actual reduction is: " + actualReduction);
         /*
