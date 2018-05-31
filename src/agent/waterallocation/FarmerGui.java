@@ -8,6 +8,7 @@ package agent.waterallocation;
 import agent.waterallocation.Crops.cropType;
 import java.util.List;
 import java.io.File;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
 import javax.swing.JFileChooser;
@@ -21,6 +22,7 @@ public class FarmerGui extends javax.swing.JFrame {
     String filenameGlob;
     Double etCal = 0.0;
     Crops calCrops = new Crops();
+    DecimalFormat df = new DecimalFormat("#.##");
     /**
      * Creates new form FarmerGui
      */
@@ -213,48 +215,12 @@ public class FarmerGui extends javax.swing.JFrame {
         while (itrR.hasNext()) {
             cropType st = (cropType)itrR.next();
             System.out.println(st.cropName + " " + st.cropStage +
-                    " " + st.droubhtSensitivity + " " + st.dsValue + " " + st.stValue + " " + st.cvValue +
-                    " " + st.literPerSecHec + " " + st.waterReq + " " + st.soilWaterContainValue + " " + st.waterReqWithSoil + " " + st.cropCoefficient + " " + st.waterReduction);
+                    " " + st.droubhtSensitivity + " " + df.format(st.dsValue) + " " + df.format(st.stValue) + " " + df.format(st.cvValue) +
+                    " " + df.format(st.literPerSecHec) + " " + df.format(st.waterReq) + " " + df.format(st.soilWaterContainValue) + " " + df.format(st.waterReqWithSoil) +
+                    " " + df.format(st.cropCoefficient) + " " + df.format(st.waterReduction));
         }
         System.out.println("Actual reduction is: " + actualReduction);
-        /*
-        System.out.println("Defult data Farm A:");
-	//Collections.sort(aCrop.calList);
-	System.out.println("\n");
-	System.out.println("Actual water requirement FarmA: " + calCrops.totalWaterReq);
-	System.out.println("Reduction Farm A:"+calCrops.totalWaterReq * totalWaterReductionPctg );
-	System.out.println("******File read completed******");
-	System.out.println("Calculation Processing");
-        System.out.println("\n");
-		
-	actualReduction = calCrops.calcWaterReduction(totalWaterReductionPctg);
-		
-		
-        System.out.println("Actual reduction Farm A: "+actualReduction);
-        System.out.println("ET0 = "+calCrops.ET);
-        //Show reduction order
-        for (int i = 0; i < calCrops.calList.size(); i++) {
-            System.out.println(calCrops.calList.get(i));
-        }
-        System.out.println("\n");
-        System.out.println("Defult data Farm B:");
-        //Collections.sort(aCrop.calList);
-	System.out.println("\n");
-	System.out.println("Actual water requirement Farm B: " + calCrops.totalWaterReq);
-	System.out.println("Reduction Farm B:"+calCrops.totalWaterReq * totalWaterReductionPctg );
-	System.out.println("******File read completed******");
-	System.out.println("Calculation Processing");
-        System.out.println("\n");
-		
-        actualReduction = calCrops.calcWaterReduction(totalWaterReductionPctg);
-		
-        System.out.println("Actual reduction Farm b: "+actualReduction);
-        System.out.println("ET0 = "+calCrops.ET);
-        //Show reduction order
-        for (int i = 0; i < calCrops.calList.size(); i++) {
-            System.out.println(calCrops.calList.get(i));
-        }
-        */
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

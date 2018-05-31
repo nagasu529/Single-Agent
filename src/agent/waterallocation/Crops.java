@@ -5,6 +5,7 @@ package agent.waterallocation;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -46,6 +47,8 @@ public class Crops extends SelectApp
 	public double totalWaterReq;
 	public List<String> list = new ArrayList<String>();
     public String[] calculationArray;
+    
+    DecimalFormat df = new DecimalFormat("#.##");
 	
     ArrayList<Double> order = new ArrayList<Double>();		//order array
 	ArrayList<String> calList = new ArrayList<String>();	//Crop list Data
